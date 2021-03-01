@@ -7,17 +7,24 @@
 // Put the assignment code here
 
 class Quaternion {
-  int q,p,r;
-public:  
-double Quaternion(0){Quaternion(n)}
-void output()const{cout<< Quaternion << endl;}
-void output(){
- r = q + r*a;
- }
-bool operator==(const Quaternion &rhs)const{return Quaternion == rhs.Quaternion;}
-
+int num;
+public:
+Quaternion();
+Quaternion(int);
+Quaternion(const Quaternion&);
+Quaternion& operator=(const Quaternion&);
+bool operator==(const Quaternion &rhs)const{return num == rhs.num;
+}
+void operator==(const Quaternion&);
+void operator+=(const Quaternion&);
+void operator-=(const Quaternion&);
+void operator*=(const Quaternion&);
 private:
 double Quaternion;
+};
+
+
+//------------------------------
 //   DO NOT MODIFY TEST CASES
 //------------------------------
 TEST_CASE( "Assignment" ) {
