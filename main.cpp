@@ -6,22 +6,66 @@
 
 // Put the assignment code here
 
-class Quaternion {
-int num;
+ class Quaternion{
+  double q;
+  double p;
+  double r;
+  double n;
 public:
-Quaternion();
-Quaternion(int);
-Quaternion(const Quaternion&);
-Quaternion& operator=(const Quaternion&);
-bool operator==(const Quaternion &rhs)const{return num == rhs.num;
-}
-void operator==(const Quaternion&);
-void operator+=(const Quaternion&);
-void operator-=(const Quaternion&);
-void operator*=(const Quaternion&);
-private:
-double Quaternion;
-};
+  Quaternion(double a, double b, double c, double d){
+    q = a;
+    p = b;
+    r = c;
+    n = d;
+  }
+
+  Quaternion operator+(const Quaternion& z)const{
+    Quaternion here{0,0,0,0};
+    here.q = this->q + z.q;
+    here.p = this->p + z.p;
+    here.r = this->r + z.r;
+    here.n = this->n + z.n;
+    return here;
+  }
+  Quaternion operator-(const Quaternion& z)const{
+    Quaternion minus{0,0,0,0};
+    minus.q = this->q - z.q;
+    minus.p = this->p - z.p;
+    minus.r = this->r - z.r;
+    minus.n = this->n - z.n;
+    return minus;
+  }
+  Quaternion operator*(const double& yn)const{
+    Quaternion multi{0,0,0,0};
+    multi.q = this->q * yn;
+    multi.p = this->p * yn;
+    multi.r = this->r * yn;
+    multi.n = this->n * yn;
+    return multi;
+  }
+  bool operator==(const Quaternion& z)const{
+    if (this->q == z.q){
+      if (this->p == z.p){
+        if (this->r == z.r){
+          if (this->n == z.n){
+            return true;
+          }
+          else{
+            return false;
+          }
+        }
+        else{
+          return false;
+        }
+      }else{
+        return false;
+      }
+    }
+    else{
+      return false;
+    }
+  }
+}; 
 
 
 //------------------------------
