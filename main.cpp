@@ -7,7 +7,30 @@
 // Put the assignment code here
 
 class Quaternion {
+double num1;
+  double num2;
+  double num3;
+  double num4;
+public:
+Quaternion(double nu1, double nu2, double nu3, double nu4){
+    num1 = nu1;
+    num1 = nu2;
+    num1 = nu3;
+    num1 = nu4;
+Quaternion();
+Quaternion(int);
+Quaternion(const Quaternion&);
+Quaternion& operator=(const Quaternion&);
+bool operator==(const Quaternion &rhs)const{return num == rhs.num;
+}
+void operator==(const Quaternion&);
+void operator+=(const Quaternion&);
+void operator-=(const Quaternion&);
+void operator*=(const Quaternion&);
+private:
+double Quaternion;
 };
+
 
 //------------------------------
 //   DO NOT MODIFY TEST CASES
